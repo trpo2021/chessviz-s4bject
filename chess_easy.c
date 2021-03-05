@@ -16,7 +16,7 @@ int main()
         for(int j = 0;j < 9;j++){
             printf("%2c", board[i][j]);
         }
-        printf("0\n");
+        printf("\n");
     }    
     return 0;
 }
