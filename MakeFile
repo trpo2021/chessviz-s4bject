@@ -1,2 +1,2 @@
-1: chess_easy.cm
+1: chess_easy.c
 	gcc -Wall -Werror -o 1 chess_easy.c
