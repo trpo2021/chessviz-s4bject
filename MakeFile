@@ -1,2 +1,4 @@
- main.exe : main.c move.c  display_board.c
-	gcc -Wall -Werror -o main.exe main.c move.c  display_board.c
+all: chess
+
+chess: src/main/main.c src/function/library.h
+    gcc -Wall _werror -o src/main/mainc.c src/
