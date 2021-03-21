@@ -1,4 +1,15 @@
-all: chess
+all: bin/chess
 
-chess: src/main/main.c src/function/library.h
-    gcc -Wall _werror -o src/main/mainc.c src/
+bin/chess: obj/display_board.o obj/move.o obj/main.o
+	gcc -Wall -Werror -o bin/chess obj/display_board.o obj/move.o obj/main.o
+obj/display_board.o: scr/function/display_board.c
+	gcc -Wall -Werror -c -I scr -o obj/display_board.o scr/function/display_board.c
+obj/move.o: scr/function/move.c
+	gcc -Wall -Werror -c -I scr -o obj/move.o scr/function/move.c
+obj/main.o: scr/main/main.c
+	gcc -Wall -Werror -c -I scr -o obj/main.o scr/main/main.c
+
+PHONY : clean;
+
+clean:
+		rm -rf obj/*.o bin/chess

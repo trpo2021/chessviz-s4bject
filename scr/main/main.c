@@ -1,4 +1,7 @@
-#include "library.h"
+#include <stdio.h>
+#include <function/display_board.h>
+#include <function/move.h>
+
 
 int main()
 {
