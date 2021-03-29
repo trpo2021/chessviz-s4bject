@@ -1,7 +1,7 @@
-all: bin/chess
+all: bin/chess.exe
 
-bin/chess: obj/display_board.o obj/move.o obj/main.o
-	gcc -Wall -Werror -o bin/chess obj/display_board.o obj/move.o obj/main.o
+bin/chess.exe: obj/display_board.o obj/move.o obj/main.o
+	gcc -Wall -Werror -o bin/chess.exe obj/display_board.o obj/move.o obj/main.o
 obj/display_board.o: scr/function/display_board.c
 	gcc -Wall -Werror -c -I scr -o obj/display_board.o scr/function/display_board.c
 obj/move.o: scr/function/move.c
