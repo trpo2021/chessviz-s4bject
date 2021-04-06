@@ -13,4 +13,4 @@ jobs:
         run: git ls-files *.{c,h} | xargs -i && git diff --exit-code
 
       - name: Build application
-        run: make 
+        run: make -f MakeFile
