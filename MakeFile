@@ -12,4 +12,4 @@ obj/main.o: scr/main/main.c
 PHONY : clean;
 
 clean:
-		rm -rf obj/*.o bin/chess
+		rm -rf obj/*.o bin/chess.exe
