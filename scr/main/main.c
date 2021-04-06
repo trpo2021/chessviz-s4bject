@@ -15,8 +15,8 @@ int main()
          {'2','P','P','P','P','P','P','P','P'},
          {'1','R','N','B','Q','K','B','N','R'},
          {' ','a','b','c','d','e','f','g','h'}};
-         print_board(board);
-         move(board);
-         print_board(board);
-         return 0;
+   print_board(board);
+   move(board);
+   print_board(board);
+   return 0;
 }

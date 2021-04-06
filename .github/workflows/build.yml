@@ -13,5 +13,4 @@ jobs:
         run: git ls-files *.{c,h} | xargs clang-format -i && git diff --exit-code
 
       - name: Build application
-        run: make -f MakeFile
-        
+        run: make 
