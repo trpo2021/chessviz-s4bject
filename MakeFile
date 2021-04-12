@@ -1,13 +1,15 @@
 all: bin/chess.exe
 
-bin/chess.exe: obj/display_board.o obj/move.o obj/main.o
-	gcc -Wall -Werror -o bin/chess.exe obj/display_board.o obj/move.o obj/main.o
+bin/chess.exe: obj/main.o libfun.a
+	gcc -Wall -Werror -o bin/chess.exe obj/main.o libfun.a
 obj/display_board.o: scr/function/display_board.c
 	gcc -Wall -Werror -c -I scr -o obj/display_board.o scr/function/display_board.c
 obj/move.o: scr/function/move.c
 	gcc -Wall -Werror -c -I scr -o obj/move.o scr/function/move.c
 obj/main.o: scr/main/main.c
 	gcc -Wall -Werror -c -I scr -o obj/main.o scr/main/main.c
+libfun.a: obj/display_board.o obj/move.o
+	ar rcs libfun.a obj/display_board.o obj/move.o
 
 PHONY : clean;
 
