@@ -441,6 +441,9 @@ void move(char board[9][9])
             board[(asciinumber - steps[4])][(steps[3] - asciiletter)] = 'r';
             board[(asciinumber - steps[1])][(steps[0] - asciiletter)] = ' ';
         }
+
+ 
+
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 printf("%2c", board[i][j]);
