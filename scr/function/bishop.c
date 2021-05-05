@@ -1,4 +1,4 @@
-#include "src/library.h"
+#include "library.h"
 #include <stdio.h>
 #include <stdlib.h>
 
