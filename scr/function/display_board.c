@@ -1,4 +1,4 @@
-#include "library.h"
+#include "src/library.h"
 void print_board(char board[9][9])
 {
     for (int i = 0; i < 9; i++) {
