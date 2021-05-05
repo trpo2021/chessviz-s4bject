@@ -10,10 +10,12 @@ obj/king.o: scr/function/king.c
 	gcc -Wall -Werror -c -I scr -o obj/king.o scr/function/king.c
 obj/bishop.o: scr/function/bishop.c
 	gcc -Wall -Werror -c -I scr -o obj/bishop.o scr/function/bishop.c
+obj/rook.o: scr/function/rook.c
+	gcc -Wall -Werror -c -I scr -o obj/rook.o scr/function/rook.c
 obj/main.o: scr/main/main.c
 	gcc -Wall -Werror -c -I scr -o obj/main.o scr/main/main.c
-libfun.a: obj/display_board.o obj/move.o obj/king.o obj/bishop.o
-	ar rcs libfun.a obj/display_board.o obj/move.o obj/king.o obj/bishop.o
+libfun.a: obj/display_board.o obj/move.o obj/king.o obj/bishop.o obj/rook.o
+	ar rcs libfun.a obj/display_board.o obj/move.o obj/king.o obj/bishop.o obj/rook.o
 
 PHONY : clean;
 
