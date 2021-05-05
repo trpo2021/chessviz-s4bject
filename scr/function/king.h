@@ -1,0 +1,1 @@
+int kingcheck(char board[9][9], char turn[6]);
