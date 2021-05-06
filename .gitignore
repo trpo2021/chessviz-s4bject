@@ -1,5 +1,5 @@
-*.o
-*.out
-*.exe
-*.
-*.bin
+bin/*
+obj/*.o
+obj/*.a
+test/*.o
+test/*.a
