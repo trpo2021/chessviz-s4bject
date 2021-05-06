@@ -4,64 +4,6 @@
 
 void move(char board[9][9])
 {
-    int kingcheck(char board[9][9], char turn[6])
-    {
-        if ((turn[0] == turn[3]) && (turn[1] == (turn[4] + 1))) {
-            return 0;
-        } else if ((turn[0] == turn[3]) && (turn[1] == (turn[4] - 1))) {
-            return 0;
-        } else if ((turn[0] == (turn[3] + 1)) && (turn[1] == turn[4])) {
-            return 0;
-        } else if ((turn[0] == (turn[3] - 1)) && (turn[1] == turn[4])) {
-            return 0;
-        } else if ((abs(turn[0] - turn[3])) == (abs(turn[1] - turn[4]))) {
-            return 0;
-        } else
-            return -1;
-    }
-
-    int bishopcheck(char board[9][9], char turn[6])
-    {
-        int i, asciinumber = 56, asciiletter = 96, check = 0;
-
-        if ((turn[3] - turn[0] > 0) && (turn[4] - turn[1] > 0)) {
-            for (i = 1; i < (turn[3] - turn[0]); i++) {
-                if (board[(asciinumber - turn[1]) - i]
-                         [(turn[0] - asciiletter) + i]
-                    != ' ') {
-                    check = 1;
-                }
-            }
-        } else if ((turn[3] - turn[0] > 0) && (turn[4] - turn[1] < 0)) {
-            for (i = 1; i < (turn[3] - turn[0]); i++) {
-                if (board[(asciinumber - turn[1]) + i]
-                         [(turn[0] - asciiletter) + i]
-                    != ' ') {
-                    check = 1;
-                }
-            }
-        } else if ((turn[3] - turn[0] < 0) && (turn[4] - turn[1] > 0)) {
-            for (i = 1; i < (turn[0] - turn[3]); i++) {
-                if (board[(asciinumber - turn[1]) - i]
-                         [(turn[0] - asciiletter) - i]
-                    != ' ') {
-                    check = 1;
-                }
-            }
-        } else if ((turn[3] - turn[0] < 0) && (turn[4] - turn[1] < 0)) {
-            for (i = 1; i < (turn[0] - turn[3]); i++) {
-                if (board[(asciinumber - turn[1]) + i]
-                         [(turn[0] - asciiletter) - i]
-                    != ' ') {
-                    check = 1;
-                }
-            }
-        }
-        if (check == 1)
-            return -1;
-        else
-            return 0;
-    }
     int rookcheck(char board[9][9], char turn[6])
     {
         int asciinumber = 56, asciiletter = 96, i, check = 0;

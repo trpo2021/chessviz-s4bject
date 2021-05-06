@@ -6,12 +6,27 @@ obj/display_board.o: scr/function/display_board.c
 	gcc -Wall -Werror -c -I scr -o obj/display_board.o scr/function/display_board.c
 obj/move.o: scr/function/move.c
 	gcc -Wall -Werror -c -I scr -o obj/move.o scr/function/move.c
+obj/king.o: scr/function/king.c
+	gcc -Wall -Werror -c -I scr -o obj/king.o scr/function/king.c
+obj/bishop.o: scr/function/bishop.c
+	gcc -Wall -Werror -c -I scr -o obj/bishop.o scr/function/bishop.c
+obj/rook.o: scr/function/rook.c
+	gcc -Wall -Werror -c -I scr -o obj/rook.o scr/function/rook.c
 obj/main.o: scr/main/main.c
 	gcc -Wall -Werror -c -I scr -o obj/main.o scr/main/main.c
-libfun.a: obj/display_board.o obj/move.o
-	ar rcs libfun.a obj/display_board.o obj/move.o
+libfun.a: obj/display_board.o obj/move.o obj/king.o obj/bishop.o obj/rook.o
+	ar rcs libfun.a obj/display_board.o obj/move.o obj/king.o obj/bishop.o obj/rook.o
+
+test: bin/test
+
+bin/test: test/testmain.o libfun.a test/test.o
+	gcc -Wall -I thirdparty -I scr -Werror -o bin/test.bin test/test.o test/testmain.o libfun.a
+test/testmain.o: test/main.c
+	gcc -Wall -I thirdparty -I scr -Werror -c -o test/testmain.o test/main.c
+test/test.o: test/test.c
+	gcc -Wall -I thirdparty -I scr -Werror -c -o test/test.o test/test.c
 
 PHONY : clean;
 
 clean:
-		rm -rf obj/*.o bin/chess.exe
+		rm -rf obj/*.o bin/chess.exe bin/test.bin
