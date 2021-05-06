@@ -29,4 +29,4 @@ test/test.o: test/test.c
 PHONY : clean;
 
 clean:
-		rm -rf obj/*.o bin/chess.exe
+		rm -rf obj/*.o bin/chess.exe bin/test

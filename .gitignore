@@ -1,4 +1,4 @@
-*test.bin
+bin
 obj/*.o
 obj/*.a
 test/*.o
