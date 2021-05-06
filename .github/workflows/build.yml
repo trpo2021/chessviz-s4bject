@@ -17,3 +17,6 @@ jobs:
         
       - name: Chess test
         run: make -f MakeFile test
+
+      - name: Chess test
+        run: make test
