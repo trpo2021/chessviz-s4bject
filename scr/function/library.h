@@ -4,3 +4,4 @@
 #include "function/move.h"
 #include "function/king.h"
 #include "function/bishop.h"
+#include "function/rook.h"

@@ -17,6 +17,15 @@ obj/main.o: scr/main/main.c
 libfun.a: obj/display_board.o obj/move.o obj/king.o obj/bishop.o obj/rook.o
 	ar rcs libfun.a obj/display_board.o obj/move.o obj/king.o obj/bishop.o obj/rook.o
 
+test: bin/test
+
+bin/test: test/testmain.o libfun.a test/test.o
+	gcc -Wall -I thirdparty -I scr -Werror -o bin/test.bin test/test.o test/testmain.o libfun.a
+test/testmain.o: test/main.c
+	gcc -Wall -I thirdparty -I scr -Werror -c -o test/testmain.o test/main.c
+test/test.o: test/test.c
+	gcc -Wall -I thirdparty -I scr -Werror -c -o test/test.o test/test.c
+
 PHONY : clean;
 
 clean:

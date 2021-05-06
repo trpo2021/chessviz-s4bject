@@ -15,3 +15,5 @@ jobs:
       - name: Build application
         run: make -f MakeFile
         
+      - name: Chess test
+        run: make -f MakeFile test
