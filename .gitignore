@@ -1,5 +1,6 @@
-bin
-obj/*.o
-obj/*.a
-test/*.o
-test/*.a
+*.o
+*.out
+*.exe
+*.
+bin/*
+*.bin
