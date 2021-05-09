@@ -13,7 +13,7 @@ jobs:
         run: git ls-files *.{c,h} | xargs -i && git diff --exit-code
 
       - name: Chess
-        run: make
+        run: make -f MakeFile
         
       - name: Chess test
-        run: make test
+        run: make -f MakeFile test
